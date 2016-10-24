@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - facturas@localhost" uuid="f386d093-cf8b-422c-8eea-6f88aa08be98">
+    <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.4">
+      <database id="1" name="facturas"/>
+      <schema id="2" parent="1" name="productos">
+        <object-id>16396</object-id>
+        <comment>Esquema para agrupar los productos
+</comment>
+        <introspection-state-number>682</introspection-state-number>
+        <introspection-timestamp>2016-10-24.13:22:04.896</introspection-timestamp>
+      </schema>
+      <sequence id="3" parent="2" name="unidad_medida_id_seq">
+        <object-id>16397</object-id>
+        <state-number>682</state-number>
+      </sequence>
+      <table id="4" parent="2" name="unidad_medida">
+        <object-id>16399</object-id>
+        <state-number>682</state-number>
+      </table>
+      <column id="5" parent="4" name="id">
+        <comment>Identificador de la unidad de medida</comment>
+        <state-number>682</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;productos.unidad_medida_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="6" parent="4" name="nombre">
+        <comment>Descripción de la unidad de medida</comment>
+        <state-number>682</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+    </database-model>
+  </data-source>
+</component>
