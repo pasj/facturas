@@ -1,40 +1,832 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="PostgreSQL - facturas@localhost" uuid="f386d093-cf8b-422c-8eea-6f88aa08be98">
+  <data-source name="PostgreSQL - facturacion@localhost" uuid="26976cbe-6991-47f2-b7e4-c191bcd4be33">
     <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
     <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.4">
-      <database id="1" name="facturas"/>
-      <schema id="2" parent="1" name="productos">
-        <object-id>16396</object-id>
-        <comment>Esquema para agrupar los productos
-</comment>
-        <introspection-state-number>682</introspection-state-number>
-        <introspection-timestamp>2016-10-24.13:22:04.896</introspection-timestamp>
+      <database id="1" name="facturacion"/>
+      <schema id="2" parent="1" name="ubicacion">
+        <object-id>16877</object-id>
+        <introspection-state-number>977</introspection-state-number>
+        <introspection-timestamp>2016-10-28.10:37:20.566</introspection-timestamp>
       </schema>
-      <sequence id="3" parent="2" name="unidad_medida_id_seq">
-        <object-id>16397</object-id>
-        <state-number>682</state-number>
+      <schema id="3" parent="1" name="ventas">
+        <object-id>16875</object-id>
+        <introspection-state-number>979</introspection-state-number>
+        <introspection-timestamp>2016-10-28.10:37:21.631</introspection-timestamp>
+      </schema>
+      <schema id="4" parent="1" name="catalogo">
+        <object-id>16876</object-id>
+        <introspection-state-number>978</introspection-state-number>
+        <introspection-timestamp>2016-10-28.10:37:21.866</introspection-timestamp>
+      </schema>
+      <sequence id="5" parent="2" name="area_id_seq">
+        <object-id>24584</object-id>
+        <state-number>975</state-number>
       </sequence>
-      <table id="4" parent="2" name="unidad_medida">
-        <object-id>16399</object-id>
-        <state-number>682</state-number>
+      <sequence id="6" parent="2" name="municipio_id_seq">
+        <object-id>24586</object-id>
+        <state-number>977</state-number>
+        <next-value>179</next-value>
+      </sequence>
+      <table id="7" parent="2" name="area">
+        <object-id>16878</object-id>
+        <state-number>921</state-number>
       </table>
-      <column id="5" parent="4" name="id">
-        <comment>Identificador de la unidad de medida</comment>
-        <state-number>682</state-number>
+      <table id="8" parent="2" name="municipio">
+        <object-id>16881</object-id>
+        <state-number>970</state-number>
+      </table>
+      <sequence id="9" parent="3" name="factura_id_seq">
+        <object-id>24602</object-id>
+        <state-number>979</state-number>
+        <next-value>10000</next-value>
+      </sequence>
+      <sequence id="10" parent="3" name="facturaabono_id_seq">
+        <object-id>24604</object-id>
+        <state-number>979</state-number>
+      </sequence>
+      <sequence id="11" parent="3" name="facturadetalle_id_seq">
+        <object-id>24606</object-id>
+        <state-number>979</state-number>
+        <next-value>150000</next-value>
+      </sequence>
+      <sequence id="12" parent="3" name="orden_id_seq">
+        <object-id>24608</object-id>
+        <state-number>979</state-number>
+        <next-value>10000</next-value>
+      </sequence>
+      <sequence id="13" parent="3" name="ordenabono_id_seq">
+        <object-id>24610</object-id>
+        <state-number>979</state-number>
+      </sequence>
+      <sequence id="14" parent="3" name="ordendetalle_id_seq">
+        <object-id>24612</object-id>
+        <state-number>979</state-number>
+        <next-value>150000</next-value>
+      </sequence>
+      <table id="15" parent="3" name="factura">
+        <object-id>16920</object-id>
+        <state-number>940</state-number>
+      </table>
+      <table id="16" parent="3" name="facturaabono">
+        <object-id>16923</object-id>
+        <state-number>942</state-number>
+      </table>
+      <table id="17" parent="3" name="facturadetalle">
+        <object-id>16926</object-id>
+        <state-number>943</state-number>
+      </table>
+      <table id="18" parent="3" name="orden">
+        <object-id>16929</object-id>
+        <state-number>945</state-number>
+      </table>
+      <table id="19" parent="3" name="ordenabono">
+        <object-id>16932</object-id>
+        <state-number>947</state-number>
+      </table>
+      <table id="20" parent="3" name="ordendetalle">
+        <object-id>16935</object-id>
+        <state-number>948</state-number>
+      </table>
+      <sequence id="21" parent="4" name="categoria_id_seq">
+        <object-id>24588</object-id>
+        <state-number>978</state-number>
+        <next-value>9</next-value>
+      </sequence>
+      <sequence id="22" parent="4" name="cliente_id_seq">
+        <object-id>24590</object-id>
+        <state-number>978</state-number>
+        <next-value>100</next-value>
+      </sequence>
+      <sequence id="23" parent="4" name="empleado_id_seq">
+        <object-id>24592</object-id>
+        <state-number>978</state-number>
+        <next-value>50</next-value>
+      </sequence>
+      <sequence id="24" parent="4" name="producto_id_seq">
+        <object-id>24594</object-id>
+        <state-number>978</state-number>
+        <next-value>77</next-value>
+      </sequence>
+      <sequence id="25" parent="4" name="proveedor_id_seq">
+        <object-id>24596</object-id>
+        <state-number>978</state-number>
+        <next-value>200</next-value>
+      </sequence>
+      <sequence id="26" parent="4" name="tabla_id_seq">
+        <object-id>24598</object-id>
+        <state-number>978</state-number>
+        <next-value>11</next-value>
+      </sequence>
+      <sequence id="27" parent="4" name="tabladetalle_id_seq">
+        <object-id>24600</object-id>
+        <state-number>978</state-number>
+        <next-value>91</next-value>
+      </sequence>
+      <table id="28" parent="4" name="categoria">
+        <object-id>16893</object-id>
+        <state-number>966</state-number>
+      </table>
+      <table id="29" parent="4" name="cliente">
+        <object-id>16896</object-id>
+        <state-number>969</state-number>
+      </table>
+      <table id="30" parent="4" name="empleado">
+        <object-id>16899</object-id>
+        <state-number>972</state-number>
+      </table>
+      <table id="31" parent="4" name="producto">
+        <object-id>16950</object-id>
+        <state-number>966</state-number>
+      </table>
+      <table id="32" parent="4" name="proveedor">
+        <object-id>16953</object-id>
+        <state-number>971</state-number>
+      </table>
+      <table id="33" parent="4" name="tabla">
+        <object-id>16902</object-id>
+        <state-number>929</state-number>
+      </table>
+      <table id="34" parent="4" name="tabladetalle">
+        <object-id>16905</object-id>
+        <state-number>972</state-number>
+      </table>
+      <column id="35" parent="7" name="idarea">
+        <state-number>915</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
-        <default-expression>nextval(&apos;productos.unidad_medida_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="6" parent="4" name="nombre">
-        <comment>Descripción de la unidad de medida</comment>
-        <state-number>682</state-number>
+      <column id="36" parent="7" name="idareapadre">
+        <state-number>915</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="37" parent="7" name="codarea">
+        <state-number>915</state-number>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="38" parent="7" name="codareapadre">
+        <state-number>915</state-number>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="39" parent="7" name="area">
+        <state-number>915</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="40" parent="7" name="orden">
+        <state-number>915</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="41" parent="7" name="nivel">
+        <state-number>915</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="42" parent="7" name="idestado">
+        <state-number>915</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <index id="43" parent="7" name="area_pkey">
+        <object-id>16884</object-id>
+        <columns>idarea</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="44" parent="7" name="area_pkey">
+        <columns>idarea</columns>
+        <underlying-index>area_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="45" parent="7" name="area_idareapadre_fkey">
+        <columns>idareapadre</columns>
+        <ref-key>area_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="46" parent="8" name="idmunicipio">
+        <state-number>917</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="47" parent="8" name="codmunicipio">
+        <state-number>917</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="48" parent="8" name="municipio">
+        <state-number>917</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="49" parent="8" name="idestado">
+        <state-number>917</state-number>
+        <mandatory>1</mandatory>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="50" parent="8" name="idnivel">
+        <state-number>917</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <index id="51" parent="8" name="municipio_pkey">
+        <object-id>16886</object-id>
+        <columns>idmunicipio</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="52" parent="8" name="municipio_pkey">
+        <columns>idmunicipio</columns>
+        <underlying-index>municipio_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="53" parent="15" name="idfactura">
+        <state-number>940</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="54" parent="15" name="idcliente">
+        <state-number>940</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="55" parent="15" name="idempleado">
+        <state-number>940</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="56" parent="15" name="fechafactura">
+        <state-number>940</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="57" parent="15" name="iva">
+        <state-number>940</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="58" parent="15" name="descuento">
+        <state-number>940</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="59" parent="15" name="total">
+        <state-number>940</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="60" parent="15" name="saldo">
+        <state-number>940</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <index id="61" parent="15" name="factura_pkey">
+        <object-id>16938</object-id>
+        <columns>idfactura</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="62" parent="15" name="factura_pkey">
+        <columns>idfactura</columns>
+        <underlying-index>factura_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="63" parent="16" name="idfacturaabono">
+        <state-number>942</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="64" parent="16" name="idfactura">
+        <state-number>942</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="65" parent="16" name="montoabono">
+        <state-number>942</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="66" parent="16" name="fechaabono">
+        <state-number>942</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="67" parent="16" name="facturaabono_pkey">
+        <object-id>16940</object-id>
+        <columns>idfacturaabono</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="68" parent="16" name="facturaabono_pkey">
+        <columns>idfacturaabono</columns>
+        <underlying-index>facturaabono_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="69" parent="17" name="idfacturadetalle">
+        <state-number>943</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="70" parent="17" name="idfactura">
+        <state-number>943</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="71" parent="17" name="idproducto">
+        <state-number>943</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="72" parent="17" name="cantidad">
+        <state-number>943</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="73" parent="17" name="precio">
+        <state-number>943</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <index id="74" parent="17" name="facturadetalle_pkey">
+        <object-id>16942</object-id>
+        <columns>idfacturadetalle</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="75" parent="17" name="facturadetalle_pkey">
+        <columns>idfacturadetalle</columns>
+        <underlying-index>facturadetalle_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="76" parent="18" name="idorden">
+        <state-number>945</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="77" parent="18" name="idproveedor">
+        <state-number>945</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="78" parent="18" name="fechaorden">
+        <state-number>945</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="79" parent="18" name="iva">
+        <state-number>945</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="80" parent="18" name="descuento">
+        <state-number>945</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="81" parent="18" name="total">
+        <state-number>945</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="82" parent="18" name="saldo">
+        <state-number>945</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <index id="83" parent="18" name="orden_pkey">
+        <object-id>16944</object-id>
+        <columns>idorden</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="84" parent="18" name="orden_pkey">
+        <columns>idorden</columns>
+        <underlying-index>orden_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="85" parent="19" name="idordenabono">
+        <state-number>947</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="86" parent="19" name="idorden">
+        <state-number>947</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="87" parent="19" name="montoabono">
+        <state-number>947</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="88" parent="19" name="fechaabono">
+        <state-number>947</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="89" parent="19" name="ordenabono_pkey">
+        <object-id>16946</object-id>
+        <columns>idordenabono</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="90" parent="19" name="ordenabono_pkey">
+        <columns>idordenabono</columns>
+        <underlying-index>ordenabono_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="91" parent="20" name="idordendetalle">
+        <state-number>948</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="92" parent="20" name="idorden">
+        <state-number>948</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="93" parent="20" name="idproducto">
+        <state-number>948</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="94" parent="20" name="cantidad">
+        <state-number>948</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="95" parent="20" name="precio">
+        <state-number>948</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <index id="96" parent="20" name="ordendetalle_pkey">
+        <object-id>16948</object-id>
+        <columns>idordendetalle</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="97" parent="20" name="ordendetalle_pkey">
+        <columns>idordendetalle</columns>
+        <underlying-index>ordendetalle_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="98" parent="28" name="idcategoria">
+        <state-number>923</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="99" parent="28" name="categoria">
+        <state-number>923</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="100" parent="28" name="ctadebito">
+        <state-number>923</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="101" parent="28" name="ctacredito">
+        <state-number>923</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <index id="102" parent="28" name="categoria_pkey">
+        <object-id>16908</object-id>
+        <columns>idcategoria</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="103" parent="28" name="categoria_pkey">
+        <columns>idcategoria</columns>
+        <underlying-index>categoria_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="104" parent="29" name="idcliente">
+        <state-number>925</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="105" parent="29" name="idmunicipio">
+        <state-number>925</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="106" parent="29" name="cedula">
+        <state-number>925</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="107" parent="29" name="nombres">
+        <state-number>925</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="108" parent="29" name="apellidos">
+        <state-number>925</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
+      <column id="109" parent="29" name="idsexo">
+        <state-number>925</state-number>
+        <data-type>char</data-type>
+      </column>
+      <column id="110" parent="29" name="idestadocivil">
+        <state-number>925</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="111" parent="29" name="fechanacimiento">
+        <state-number>925</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="112" parent="29" name="telefono">
+        <state-number>925</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="113" parent="29" name="celular">
+        <state-number>925</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="114" parent="29" name="direccion">
+        <state-number>925</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="115" parent="29" name="email">
+        <state-number>925</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="116" parent="29" name="cliente_pkey">
+        <object-id>16910</object-id>
+        <columns>idcliente</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="117" parent="29" name="cliente_pkey">
+        <columns>idcliente</columns>
+        <underlying-index>cliente_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="118" parent="29" name="cliente_municipio_fkey">
+        <columns>idmunicipio</columns>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="119" parent="30" name="idempleado">
+        <state-number>927</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="120" parent="30" name="cedula">
+        <state-number>927</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="121" parent="30" name="nombres">
+        <state-number>927</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="122" parent="30" name="apellidos">
+        <state-number>927</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="123" parent="30" name="idsexo">
+        <state-number>927</state-number>
+        <data-type>char</data-type>
+      </column>
+      <column id="124" parent="30" name="idestadocivil">
+        <state-number>927</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="125" parent="30" name="fechanacimiento">
+        <state-number>927</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="126" parent="30" name="salario">
+        <state-number>927</state-number>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="127" parent="30" name="idjefe">
+        <state-number>927</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="128" parent="30" name="idarea">
+        <state-number>927</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="129" parent="30" name="telefono">
+        <state-number>927</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="130" parent="30" name="celular">
+        <state-number>927</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="131" parent="30" name="direccion">
+        <state-number>927</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="132" parent="30" name="email">
+        <state-number>927</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="133" parent="30" name="empleado_pkey">
+        <object-id>16912</object-id>
+        <columns>idempleado</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="134" parent="30" name="empleado_pkey">
+        <columns>idempleado</columns>
+        <underlying-index>empleado_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="135" parent="30" name="empleado_estadocivil_fkey">
+        <columns>idestadocivil</columns>
+        <ref-key>~.tabladetalle.tabladetalle_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="136" parent="31" name="idproducto">
+        <state-number>960</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="137" parent="31" name="idcategoria">
+        <state-number>960</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="138" parent="31" name="producto">
+        <state-number>960</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="139" parent="31" name="precio">
+        <state-number>960</state-number>
+        <mandatory>1</mandatory>
+        <data-type>numeric(20,2)</data-type>
+      </column>
+      <column id="140" parent="31" name="existencia">
+        <state-number>960</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="141" parent="31" name="existenciaminima">
+        <state-number>960</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="142" parent="31" name="existenciamaxima">
+        <state-number>960</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="143" parent="31" name="reservacion">
+        <state-number>960</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <index id="144" parent="31" name="producto_pkey">
+        <object-id>16956</object-id>
+        <columns>idproducto</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="145" parent="31" name="producto_pkey">
+        <columns>idproducto</columns>
+        <underlying-index>producto_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="146" parent="31" name="producto_idcategoria_fkey">
+        <columns>idcategoria</columns>
+        <ref-key>~.categoria.categoria_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="147" parent="32" name="idproveedor">
+        <state-number>962</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="148" parent="32" name="idmunicipio">
+        <state-number>962</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="149" parent="32" name="cedula">
+        <state-number>962</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="150" parent="32" name="nombres">
+        <state-number>962</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="151" parent="32" name="apellidos">
+        <state-number>962</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="152" parent="32" name="idsexo">
+        <state-number>962</state-number>
+        <data-type>char</data-type>
+      </column>
+      <column id="153" parent="32" name="idestadocivil">
+        <state-number>962</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="154" parent="32" name="fechanacimiento">
+        <state-number>962</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="155" parent="32" name="telefono">
+        <state-number>962</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="156" parent="32" name="celular">
+        <state-number>962</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="157" parent="32" name="direccion">
+        <state-number>962</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="158" parent="32" name="email">
+        <state-number>962</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="159" parent="32" name="proveedor_pkey">
+        <object-id>16958</object-id>
+        <columns>idproveedor</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="160" parent="32" name="proveedor_pkey">
+        <columns>idproveedor</columns>
+        <underlying-index>proveedor_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="161" parent="32" name="proveedor_municipio_fkey">
+        <columns>idmunicipio</columns>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="162" parent="32" name="proveedor_estadocivil_fkey">
+        <columns>idestadocivil</columns>
+        <ref-key>~.tabladetalle.tabladetalle_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="163" parent="33" name="idtabla">
+        <state-number>929</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="164" parent="33" name="tabla">
+        <state-number>929</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="165" parent="33" name="tabla_pkey">
+        <object-id>16914</object-id>
+        <columns>idtabla</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="166" parent="33" name="tabla_pkey">
+        <columns>idtabla</columns>
+        <underlying-index>tabla_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="167" parent="34" name="idlinea">
+        <state-number>931</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="168" parent="34" name="idtabla">
+        <state-number>931</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="169" parent="34" name="linea">
+        <state-number>931</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="170" parent="34" name="codequivalencia">
+        <state-number>931</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="171" parent="34" name="codpadre">
+        <state-number>931</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="172" parent="34" name="idactivo">
+        <state-number>931</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <index id="173" parent="34" name="tabladetalle_pkey">
+        <object-id>16916</object-id>
+        <columns>idlinea</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="174" parent="34" name="tabladetalle_pkey">
+        <columns>idlinea</columns>
+        <underlying-index>tabladetalle_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
     </database-model>
   </data-source>
 </component>

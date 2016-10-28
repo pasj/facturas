@@ -1,0 +1,31 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://java.sun.com/jsf/core">
+    <p:panel header="Sistema de Control de Ventas" style="border: none; height: 40px; padding: inherit"></p:panel>
+    <p:menubar style="border: none; background: #a0d7ff; ">
+        <p:submenu label="Ventas" icon="ui-icon-document">
+            <p:submenu label="Facturación" icon="ui-icon-contact" >
+                <p:menuitem value="Facturas" url="/web/facturas.xhtml"  />
+                <p:menuitem value="Abono Factura" url="#" />
+            </p:submenu>
+            <p:submenu label="Ordenes de Venta" icon="ui-icon-contact">
+                <p:menuitem value="Ordenes" url="#" />
+                <p:menuitem value="Abono Orden" url="#" />
+            </p:submenu>
+        </p:submenu>
+        <p:submenu label="Ubicación" icon="ui-icon-contact">
+            <p:menuitem value="Area" url="#" />
+            <p:menuitem value="Municipio" url="#" />
+        </p:submenu>
+        <p:submenu label="Clasificadores" icon="ui-icon-contact">
+            <p:menuitem value="Empleado" url="#" />
+            <p:menuitem value="Clientes" url="/web/cliente.xhtml" />
+            <p:menuitem value="Proveedor" url="#" />
+            <p:menuitem value="Producto" url="#" />
+            <p:menuitem value="Categoria" url="#" />
+
+        </p:submenu>
+    </p:menubar>
+
+</ui:composition>

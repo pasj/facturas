@@ -4,10 +4,15 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:postgresql://localhost:5432/facturas</property>
+    <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+    <property name="connection.url">jdbc:postgresql://localhost:5432/facturacion</property>
     <property name="connection.driver_class">org.postgresql.Driver</property>
-    <mapping resource="modelo/Entidad/UnidadMedida.hbm.xml"/>
-    <mapping class="modelo.Entidad.UnidadMedida"/>
+    <property name="dialect">net.sf.hibernate.dialect.HSQLDialect</property>
+    <property name="transaction.factory_class">
+      net.sf.hibernate.transaction.JDBCTransactionFactory
+    </property>
+
+
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>

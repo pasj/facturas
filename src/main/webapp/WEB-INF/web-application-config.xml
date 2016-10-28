@@ -9,20 +9,10 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
           p:location="classpath:jdbc.properties"/>
 
-    <bean id="nuloEnLugarCadenVacia" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-        <property name="targetObject" value="#{systemProperties}"/>
-        <property name="targetMethod" value="setProperty"/>
-        <property name="arguments">
-            <list>
-                <value>org.apache.el.parser.COERCE_TO_ZERO</value>
-                <value>false</value>
-            </list>
-        </property>
-    </bean>
 
     <!-- needed is for @Configurable -->
     <context:annotation-config />
-    <context:component-scan base-package="paquetes" />
+    <context:component-scan base-package="factura" />
 
     <tx:annotation-driven />
 
@@ -40,16 +30,29 @@
             <ref bean="dataSource" />
         </property>
         <property name="packagesToScan"
-                  value="modelo" />
+                  value="factura.modelo.Entidad" />
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${jdbc.dialect}</prop>
                 <prop key="hibernate.show_sql">${jdbc.show_sql}</prop>
                 <!-- JDBC connection pool (use the built-in) -->
                 <prop key="connection.pool_size">10</prop>
+                <prop key="hibernate.connection.url">jdbc:postgresql://localhost:5432/facturacion</prop>
+                <prop key="hibernate.connection.driver_class">org.postgresql.Driver</prop>
                 <!-- Disable the second-level cache -->
                 <!--<prop key="cache.provider_class">org.hibernate.cache.</prop> -->
             </props>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>modelo.Entidad.Municipio</value>
+            </list>
+        </property>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:modelo/Entidad/Municipio.hbm.xml</value>
+                <value>classpath:factura/modelo/Entidad/Municipio.hbm.xml</value>
+            </list>
         </property>
     </bean>
 
@@ -57,16 +60,20 @@
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
-
     </bean>
 
     <!--========== Spring CustomScopeConfigurer ========== -->
     <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
         <property name="scopes">
             <props>
-                <prop key="view">ni.gob.inss.barista.view.utils.web.spring.customscope.ViewScope</prop>
+                <prop key="view">factura.utils.ViewScope</prop>
             </props>
         </property>
     </bean>
+
+
+
+    <!--========== XMLConverter ========== -->
+
 
 </beans>

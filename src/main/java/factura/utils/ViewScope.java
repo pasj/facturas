@@ -1,4 +1,4 @@
-package utils;
+package factura.utils;
 
 import java.util.Map;
 import javax.faces.context.FacesContext;
@@ -41,5 +41,7 @@ public class ViewScope implements Scope {
     public String getConversationId() {
         return null;
     }
+
+
 }
 

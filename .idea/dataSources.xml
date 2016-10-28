@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3431386382">
-    <data-source source="LOCAL" name="PostgreSQL - facturas@localhost" uuid="f386d093-cf8b-422c-8eea-6f88aa08be98">
+  <component name="DataSourceManagerImpl" format="xml" hash="3376612043">
+    <data-source source="LOCAL" name="PostgreSQL - facturacion@localhost" uuid="26976cbe-6991-47f2-b7e4-c191bcd4be33">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/facturas</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/facturacion</jdbc-url>
     </data-source>
   </component>
 </project>
